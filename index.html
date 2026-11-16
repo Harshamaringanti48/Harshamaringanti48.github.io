@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Harsha Maringanti — AI Engineer</title>
+<meta name="description" content="Sri Harsha Maringanti builds and ships LLM applications: RAG pipelines, AI agents and chat apps. Available for full-time AI engineering roles from February 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F8FB; --ink:#1C2333; --muted:#5A6376; --rule:#D9DFEA;
+  --cite:#2F5BEA; --cite-soft:#E6ECFF; --surface:#FFFFFF;
+  --serif:"Newsreader",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--paper:#121722;--ink:#E6E9F0;--muted:#9AA3B5;--rule:#283044;--cite:#93AAFF;--cite-soft:#1E2A4A;--surface:#171D2B}
+}
+:root[data-theme="dark"]{--paper:#121722;--ink:#E6E9F0;--muted:#9AA3B5;--rule:#283044;--cite:#93AAFF;--cite-soft:#1E2A4A;--surface:#171D2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--cite);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cite);outline-offset:3px;border-radius:3px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-size:15px}
+header.top nav a{color:var(--muted);text-decoration:none;margin-left:20px}
+header.top nav a:hover{color:var(--ink)}
+.name{font-weight:600}
+
+/* Hero: a question and a cited answer */
+.hero{padding:56px 0 40px}
+.ask{display:inline-block;background:var(--cite-soft);color:var(--ink);padding:8px 16px;border-radius:18px 18px 18px 4px;font-size:16px;margin:0 0 28px}
+.answer{font:400 clamp(28px,4.6vw,42px)/1.25 var(--serif);letter-spacing:-.01em;margin:0}
+.answer sup{font:600 13px/1 var(--sans);vertical-align:super;margin-left:2px}
+.answer sup a{display:inline-block;min-width:20px;padding:3px 5px;border-radius:5px;background:var(--cite-soft);text-align:center;text-decoration:none}
+.sources{margin:28px 0 0;padding:16px 0 0;border-top:1px solid var(--rule);font-size:15px;color:var(--muted);list-style:none;display:grid;gap:6px}
+.sources li{display:flex;gap:10px}
+.sources .n{color:var(--cite);font-weight:600;min-width:24px}
+.status{margin-top:28px;font-size:15px;color:var(--muted)}
+.status strong{color:var(--ink);font-weight:500}
+.word{opacity:0}
+.answer.done .word{opacity:1}
+@media (prefers-reduced-motion: reduce){.word{opacity:1}}
+
+section{padding:48px 0;border-top:1px solid var(--rule)}
+h2{font:500 28px/1.2 var(--serif);margin:0 0 24px}
+
+/* Projects */
+.project{padding:24px 0;border-bottom:1px solid var(--rule)}
+.project:last-child{border-bottom:0}
+.project h3{font:600 20px/1.3 var(--sans);margin:0 0 6px}
+.project p{margin:0 0 10px;max-width:68ch}
+.project .stack{color:var(--muted);font-size:14px;margin-bottom:12px}
+.project .links a{margin-right:18px;font-weight:500;font-size:15px}
+.feature{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:24px;margin-bottom:8px}
+.feature h3{font-size:24px}
+.pipeline{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 16px;padding:0;list-style:none;font-size:14px;counter-reset:step}
+.pipeline li{background:var(--cite-soft);padding:4px 10px;border-radius:6px;counter-increment:step}
+.pipeline li::before{content:counter(step) ". ";color:var(--cite);font-weight:600}
+
+/* Experience */
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:14px 0}
+.row .when{color:var(--muted);font-size:15px;white-space:nowrap}
+.row .what{grid-column:1/-1;color:var(--muted);font-size:15px;margin:0}
+.row h3{font:600 17px/1.4 var(--sans);margin:0}
+
+.skills{display:grid;grid-template-columns:150px 1fr;gap:10px 20px;margin:0}
+.skills dt{font-weight:600}
+.skills dd{margin:0;color:var(--muted)}
+
+.contact p{margin:0 0 18px;max-width:60ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--rule);color:var(--ink);text-decoration:none;font-weight:500}
+.btn.primary{background:var(--cite);border-color:var(--cite);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#121722}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#121722}}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--rule)}
+
+@media (max-width:560px){
+  header.top nav a{margin-left:14px}
+  header.top nav a.hide-sm{display:none}
+  .skills{grid-template-columns:1fr;gap:2px}
+  .skills dd{margin-bottom:10px}
+  .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="name">Sri Harsha Maringanti</span>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="resume.pdf">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="ask">Who is Sri Harsha Maringanti?</p>
+      <p class="answer" id="answer">An AI engineer who builds LLM applications end to end and keeps them running after launch<sup><a href="#s1" aria-label="Source 1">1</a></sup>. He writes retrieval pipelines from scratch<sup><a href="#s2" aria-label="Source 2">2</a></sup>, builds agents that use real tools<sup><a href="#s3" aria-label="Source 3">3</a></sup>, and is finishing an M.S. in Computer Science<sup><a href="#s4" aria-label="Source 4">4</a></sup>.</p>
+      <ol class="sources" aria-label="Sources">
+        <li id="s1"><span class="n">1</span><span>Two live apps you can try today: <a href="https://huggingface.co/spaces/sriharsha1414/RAG">RAG PDF Chatbot</a> and <a href="https://ai-chatbot-afxr5bankg8nzzigdwqkzo.streamlit.app/">AI Chatbot</a>, both migrated to new models when Groq retired Llama in 2026</span></li>
+        <li id="s2"><span class="n">2</span><span><a href="https://github.com/Harshamaringanti48/rag-pdf-chatbot">rag-pdf-chatbot on GitHub</a>, no LangChain</span></li>
+        <li id="s3"><span class="n">3</span><span><a href="https://github.com/Harshamaringanti48/Ai_data_analyst_agent">Data Analyst Agent</a> and <a href="https://github.com/Harshamaringanti48/blog-to-podcast-agent">Blog-to-Podcast Agent</a></span></li>
+        <li id="s4"><span class="n">4</span><span>Auburn University at Montgomery, graduating December 2026, GPA 3.62</span></li>
+      </ol>
+      <p class="status"><strong>Open to full-time AI engineer roles in the US, starting February 2027.</strong> Based in Alabama, happy to relocate or work remotely.</p>
+    </div>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects</h2>
+
+      <article class="project feature">
+        <h3>RAG PDF Chatbot</h3>
+        <p>Upload any PDF and ask it questions. Every answer lists the pages it came from, so you can check it instead of trusting the model.</p>
+        <ol class="pipeline" aria-label="How it works">
+          <li>Read the PDF</li><li>Split into overlapping chunks</li><li>Embed with MiniLM</li><li>Search with FAISS</li><li>Answer with GPT-OSS</li><li>Cite the pages</li>
+        </ol>
+        <p class="stack">Python, FAISS, Sentence-Transformers, Groq, Streamlit, Docker, Hugging Face Spaces</p>
+        <div class="links"><a href="https://huggingface.co/spaces/sriharsha1414/RAG">Try the live demo</a><a href="https://github.com/Harshamaringanti48/rag-pdf-chatbot">Read the code</a></div>
+      </article>
+
+      <article class="project">
+        <h3>Data Analyst Agent</h3>
+        <p>Ask plain-English questions about a CSV or Excel file. A GPT-4o agent writes the SQL, runs it in DuckDB, and explains the result.</p>
+        <p class="stack">Python, Agno, GPT-4o, DuckDB, Pandas, Streamlit</p>
+        <div class="links"><a href="https://github.com/Harshamaringanti48/Ai_data_analyst_agent">Read the code</a></div>
+      </article>
+
+      <article class="project">
+        <h3>AI Chatbot</h3>
+        <p>A chat app that remembers the conversation, switches between a fast and a large model, and lets you rewrite the assistant's personality.</p>
+        <p class="stack">Python, Groq, GPT-OSS 20B and 120B, Streamlit Cloud</p>
+        <div class="links"><a href="https://ai-chatbot-afxr5bankg8nzzigdwqkzo.streamlit.app/">Try the live demo</a><a href="https://github.com/Harshamaringanti48/ai-chatbot">Read the code</a></div>
+      </article>
+
+      <article class="project">
+        <h3>Blog-to-Podcast Agent</h3>
+        <p>Paste a blog link and get a narrated podcast episode in under three minutes: the agent scrapes the article, writes a script for the ear, and voices it.</p>
+        <p class="stack">Python, Agno, GPT-4o, Firecrawl, ElevenLabs, Streamlit</p>
+        <div class="links"><a href="https://github.com/Harshamaringanti48/blog-to-podcast-agent">Read the code</a></div>
+      </article>
+
+      <article class="project">
+        <h3>Flex Pay</h3>
+        <p>A team-built cashless payment system for campus: a Kotlin app, Arduino RFID readers, and live Firebase updates, with separate views for students, vendors and admins. Cut transaction time by 40%.</p>
+        <p class="stack">Kotlin, Firebase, C++, Arduino</p>
+        <div class="links"><a href="https://github.com/Harshamaringanti48/FlexPay">Read the code</a></div>
+      </article>
+    </section>
+
+    <section id="experience" aria-labelledby="exp-h">
+      <h2 id="exp-h">Experience and education</h2>
+      <div class="row"><h3>S.W.O.T. Team Member, Auburn University at Montgomery</h3><span class="when">May 2026 – now</span><p class="what">Student ambassador: campus tours, orientation sessions, and outreach to admitted students.</p></div>
+      <div class="row"><h3>Graduate Teaching Assistant, C++ Programming</h3><span class="when">Jan – May 2026</span><p class="what">Reviewed and graded student code, ran office hours and live debugging sessions.</p></div>
+      <div class="row"><h3>M.S. Computer Science, Auburn University at Montgomery</h3><span class="when">Dec 2026</span><p class="what">GPA 3.62</p></div>
+      <div class="row"><h3>B.Tech Information Technology, Anurag University, India</h3><span class="when">June 2024</span><p class="what">Led a 25-person team running a 200-participant programming contest and mentored 15 hackathon teams.</p></div>
+    </section>
+
+    <section aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="skills">
+        <dt>AI and LLMs</dt><dd>RAG, AI agents and tool use, embeddings and vector search, prompt engineering, Groq and OpenAI APIs</dd>
+        <dt>Machine learning</dt><dd>PyTorch, scikit-learn, Pandas, NumPy, NLP fundamentals</dd>
+        <dt>Languages</dt><dd>Python, SQL, C++, JavaScript, Kotlin</dd>
+        <dt>Shipping</dt><dd>Docker, Git and GitHub, Hugging Face Spaces, Streamlit Cloud, REST APIs, DuckDB, MySQL, Firebase</dd>
+      </dl>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Get in touch</h2>
+      <p>Hiring for an AI or LLM engineering role? I'd like to hear about it. Email is the fastest way to reach me.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:sriharshamaringanti2@gmail.com">Email me</a>
+        <a class="btn" href="resume.pdf">Download resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/sri-harsha-maringanti/">LinkedIn</a>
+        <a class="btn" href="https://github.com/Harshamaringanti48">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>sriharshamaringanti2@gmail.com, +1 334 753 4527</footer>
+</div>
+<script>
+// Stream the hero answer in word by word, like a model replying. Skipped for reduced motion.
+(function(){
+  var el=document.getElementById('answer');
+  if(!el||window.matchMedia('(prefers-reduced-motion: reduce)').matches){el&&el.classList.add('done');return;}
+  var words=[];
+  (function wrap(node){
+    Array.prototype.slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        var frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function(t){
+          if(!t)return;
+          if(/^\s+$/.test(t)){frag.appendChild(document.createTextNode(t));return;}
+          var s=document.createElement('span');s.className='word';s.textContent=t;words.push(s);frag.appendChild(s);
+        });
+        n.parentNode.replaceChild(frag,n);
+      } else if(n.nodeName==='SUP'){n.classList.add('word');words.push(n);}
+      else wrap(n);
+    });
+  })(el);
+  words.forEach(function(w,i){setTimeout(function(){w.style.opacity=1;w.style.transition='opacity .25s';},300+i*45);});
+})();
+</script>
+</body>
+</html>
